@@ -1,5 +1,64 @@
+* {
+	/*outline: #BDBDBD 1px dotted;*/
+}
 
+body {
+	/*background-color: #D8D8D8;*/
+	background-color: #E6E6E6
+}
 
+.main {
+	color: #585858;
+	/*background-color: white;*/
+	/*max-width: 300px;*/
+	/*width: 100px;*/
+	margin-top: 100px;
+	/*text-align: center;*/
+	/*min-height: px;*/
+	/*max-width: 200px;*/
+	/*width: auto;*/
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+#title {
+	text-align: center;
+	/*font-weight: bold;*/
+	font-weight: bold;
+	font-size: 48pt;
+	/*padding: 30px;*/
+	margin-bottom: 50px;
+}
+
+table {
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	/*width: 100px;*/
+	background-color: white;
+	margin-left: auto;
+	margin-right: auto;
+	/*width: 400px;*/
+	/*padding: 100;*/
+	/*font-family: "Trebuchet MS", Helvetica, sans-serif;*/
+	/*font-family: Tahoma, Geneva, sans-serif;*/
+	font-size: 16pt;
+	/*border: 10px solid white;*/
+}
+
+td {
+	padding: 6px;
+}
+
+#item-box {
+	width: inherit;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	font-size: 16pt;
+	color: #585858;
+}
+
+.done td:nth-child(2) {
+	opacity: 0.5;
+}
 
 /*
 body {
@@ -74,6 +133,3 @@ body {
 }
 */
 
-* {
-	/*outline: red 1px solid;*/
-}
