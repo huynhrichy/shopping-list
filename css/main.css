@@ -108,6 +108,14 @@ tr:first-child td:nth-child(2) {
 	*/
 }
 
+.store-button-no-items {
+	padding-top: 26px;
+}
+
+.item-box-no-items {
+	padding-top: 26px;
+}
+
 #store-button {
 	width: 25px;
 	height: 25px;

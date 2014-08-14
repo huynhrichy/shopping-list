@@ -9,12 +9,78 @@ $(document).ready(function() {
 	});
 
 	$('#store-button').click(function() {
+
 		var itemName = $('#item-box').val();
 		if (itemName) {
+
+			if ($('table tr').length < 2) {
+				alert('2');
+				$('tr:first-child td:nth-child(2)').removeClass('item-box-no-items');
+				//$('tr:first-child td:nth-child(3)').removeClass('delete-box-no-items');
+				$('#store-button').removeClass('store-button-no-items');
+			}
+
 			addItem(itemName);
+
 		}
 	});
 
+	$('.unchecked-box').click(function() {
+		// get the item of this row
+		
+		
+		$('<img src="images/checked.png" alt="" class="checked-box">').insertAfter($(this));
+		//$(this).closest('tr').find('.checked-box').addClass('.unchecked-box');
+		$(this).closest('tr').addClass('done');
+		$(this).fadeOut(400, function() {
+		});
+		$(this).remove();
+
+
+
+
+		//var itemName = $(this).closest('tr').find('.item-name');
+		//$(this).closest('tr').remove();
+		//checkItem(itemName);
+	});
+
+	$('.checked-box').click(function() {
+		$('<img src="images/unchecked.png" alt="" class="unchecked-box">').insertAfter($(this));
+		//$(this).closest('tr').find('.checked-box').addClass('.checked-box');
+		$(this).closest('tr').removeClass('done');
+		$(this).fadeOut(400, function() {
+		});
+		$(this).remove();
+
+
+		/*
+		// get the item of this row
+		var itemName = $(this).closest('tr').find('.item-name');
+
+		// delete row
+		$(this).closest('tr').remove();
+
+		uncheckItem(itemName);
+		*/
+	});
+
+	$('.delete-button').click(function() {
+		$(this).closest('tr').fadeOut(400, function() {
+		});
+		$(this).closest('tr').remove();
+		//alert($('table tr').length + ' table rows left');
+
+
+
+		if ($('table tr').length < 2) {
+			//alert('1');
+			$('tr:first-child td:nth-child(2)').addClass('item-box-no-items');
+			//$('tr:first-child td:nth-child(3)').addClass('delete-button-no-items');
+			$('#store-button').addClass('store-button-no-items');
+		}
+	});
+
+/*
 	$('#title').mousedown(function() {
 		// add box-active class
 		$(this).toggleClass('.box-active');
@@ -51,6 +117,7 @@ $(document).ready(function() {
 
 		// remove box-active class
 	});
+	*/
 
 /*
 	$('.unchecked-box').mouseenter(function() {
@@ -60,7 +127,11 @@ $(document).ready(function() {
 	});*/
 
 });
+/*
+function getItemNameOfRow(check-box) {
 
+}
+*/
 
 // take in name of item
 function addItem(item) {
@@ -79,20 +150,36 @@ function addItem(item) {
 
 }
 
-function checkItem() {
+function checkItem(item) {
 	// if click on unchecked item name or unchecked box
 	// check item by removing unchecked box and replacing with checked box
 	// change classes to make ish grayed out
 	// reposition to top of done ish
 
-	alert('attempted to check item off');
+	var itemName = item.text();
+	$('<tr class="done"><td><img src="images/checked.png" alt="" class="checked-box"></td><td class="item-name">' + itemName + '</td><td><img src="images/delete.png" alt="" class="delete-button"></td></tr>').insertBefore($('.done').first());
+
+	//alert('attempted to check ' + itemName + ' off');
+
+	
+	//$('<tr class="done"><td><img src="images/checked.png" alt="" class="checked-box"></td><td class="item-name">' + itemName + '</td><td><img src="images/delete.png" alt="" class="delete-button"></td></tr>').insertBefore($('.done').first());
+	// add class and add box
+
 }
 
-function uncheckItem() {
+function uncheckItem(item) {
 	// if click on checked item name or checked box
 	// uncheck item by removing checked box and replacing with checked box
 	// change classes to make ish not grayed out
 	// reposition to just above done ish
+	//alert('attempted to uncheck ' + item.text() + ' off');
+
+	var itemName = item.text();
+
+	//alert('attempted to check ' + itemName + ' off');
+
+	$('<tr><td><img src="images/unchecked.png" alt="" class="unchecked-box"></td><td class="item-name">' + itemName + '</td><td><img src="images/delete.png" alt="" class="delete-button"></td></tr>').insertBefore($('.done'));
+
 }
 
 function removeItem() {
