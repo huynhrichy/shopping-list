@@ -1,5 +1,5 @@
 * {
-	outline: #BDBDBD 1px dotted;
+	/*outline: #BDBDBD 1px dotted;*/
 }
 
 body {
@@ -45,6 +45,7 @@ body {
 	font-size: 48pt;
 	/*padding: 30px;*/
 	margin-bottom: 50px;
+	cursor: default;
 }
 
 table {
@@ -77,10 +78,13 @@ tr:first-child td {
 tr:first-child td:nth-child(3) {
 	/*vertical-align: middle;*/
 	padding-bottom: 17px;
+	padding-left: 6px;
 }
 
 tr:first-child td:nth-child(2) {
 	padding-bottom: 11px;
+	padding-left: 1px;
+	padding-right: 0px;
 }
 
 #enter-item-row:nth-child(1) {
@@ -120,24 +124,46 @@ tr:first-child td:nth-child(2) {
 	width: 20px;
 	height: 20px;
 	opacity: 0.725;
+	/*z-index: 3;*/
+}
+
+.unchecked-box:active, .checked-box:active {
+	opacity: 0.5;
+	/*opacity: 0.1;*/
+	/*background-color: red;*/
+}
+
+.box-active {
+	opacity: 0.5;
+	background-color: red;
+	color: purple;
+}
+
+img:active {
+	/*opacity: 0.5;*/
+}
+
+.unchecked-box:active {
+	/*background-color: red;*/
 }
 
 .item-name {
 	opacity: 0.75;
 	color: black;
+	cursor: default;
 }
 
-#store-button:hover, .unchecked-box:hover, .checked-box:hover, .item-name:hover {
+#store-button:hover, .unchecked-box:hover, .checked-box:hover/*, .item-name:hover*/ {
 	opacity: 0.933;
 }
 
-#store-button:active, .unchecked-box:active, .checked-box:active, .item-name:active {
+/*#store-button:active, .unchecked-box:active, .checked-box:active, .item-name:active {*/
 	/*opacity: 0.75;*/
 	/*
 	height: 24px;
 	width: 24px;
 	*/
-}
+/*}*/
 
 #store-button:active {
 	opacity: 0.7;
@@ -152,6 +178,12 @@ td:nth-child(1) {
 	/*width: 36px;*/
 	text-align: right;
 	padding-top: 8px;
+
+
+}
+
+td:nth-child(1) img:active {
+	/*background-color: red;*/
 }
 
 .done td:nth-child(1) {
@@ -170,7 +202,7 @@ td:nth-child(3) {
 }
 
 td:nth-child(3):active {
-	text-align: left;
+	/*text-align: left;*/
 	/*width: 36px;*/
 	/*opacity: 0.9;*/
 }
@@ -195,7 +227,7 @@ td:nth-child(3):active {
 }
 
 .done td:nth-child(2):hover {
-	opacity: 0.63;
+	/*opacity: 0.63;*/
 }
 
 tr:last-child {
