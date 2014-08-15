@@ -4,6 +4,8 @@ $(document).ready(function() {
 
 	$('#item-box').keypress(function(event) {
 		if (event.which == 13 && $('#item-box').val()) {
+			$('tr:first-child td:nth-child(2)').removeClass('item-box-no-items');
+			$('#store-button').removeClass('store-button-no-items');
 			addItem($(this).val());
 		}
 	});
