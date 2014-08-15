@@ -11,7 +11,7 @@ $(document).ready(function() {
 	$('#store-button').click(function() {
 		var itemName = $('#item-box').val();
 		if (itemName) {
-			if ($('table tr').length < 2) {
+			if ($('table tr').length >= 1) {
 				$('tr:first-child td:nth-child(2)').removeClass('item-box-no-items');
 				$('#store-button').removeClass('store-button-no-items');
 			}
