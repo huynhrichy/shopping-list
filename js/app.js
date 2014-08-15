@@ -3,7 +3,7 @@ $(document).ready(function() {
 	});
 
 	$('#item-box').keypress(function(event) {
-		if (event.which == 13) {
+		if (event.which == 13 && $('#item-box').val()) {
 			addItem($(this).val());
 		}
 	});
