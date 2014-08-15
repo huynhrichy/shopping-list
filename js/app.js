@@ -14,7 +14,7 @@ $(document).ready(function() {
 		if (itemName) {
 
 			if ($('table tr').length < 2) {
-				alert('2');
+				//alert('2');
 				$('tr:first-child td:nth-child(2)').removeClass('item-box-no-items');
 				//$('tr:first-child td:nth-child(3)').removeClass('delete-box-no-items');
 				$('#store-button').removeClass('store-button-no-items');
@@ -25,6 +25,33 @@ $(document).ready(function() {
 		}
 	});
 
+	$('.unchecked-box, .checked-box').click(function () {
+ 
+  function uncheck (e) {
+		$('<img src="images/unchecked.png" alt="" class="unchecked-box">')
+            .insertAfter($(this)) // [!!] The wrapping of `this` can be simplified (see next function)
+            .on('click', check);  // [!!] Rebind
+		$(this).closest('tr').removeClass('done');
+		$(this).remove();
+  }
+ 
+  function check (e) {
+		$('<img src="images/checked.png" alt="" class="checked-box">')
+            .insertAfter(this)
+            .on('click', uncheck);  // [!!] Rebind
+		$(this).closest('tr').addClass('done');
+		$(this).remove();
+  }
+ 
+ 
+  // [!!] Note, the event handler was being lost since a new element is added,
+  //            and the old that had the event handler was removed. In `uncheck`,
+  //            simply rebind the event handler to the new event.
+	$('.unchecked-box').click(check);
+	$('.checked-box'  ).click(uncheck);
+	
+});
+/*
 	$('.unchecked-box').click(function() {
 		// get the item of this row
 		
@@ -35,15 +62,15 @@ $(document).ready(function() {
 		$(this).fadeOut(400, function() {
 		});
 		$(this).remove();
-
+*/
 
 
 
 		//var itemName = $(this).closest('tr').find('.item-name');
 		//$(this).closest('tr').remove();
 		//checkItem(itemName);
-	});
-
+//	});
+/*
 	$('.checked-box').click(function() {
 		$('<img src="images/unchecked.png" alt="" class="unchecked-box">').insertAfter($(this));
 		//$(this).closest('tr').find('.checked-box').addClass('.checked-box');
@@ -51,7 +78,7 @@ $(document).ready(function() {
 		$(this).fadeOut(400, function() {
 		});
 		$(this).remove();
-
+*/
 
 		/*
 		// get the item of this row
@@ -62,7 +89,7 @@ $(document).ready(function() {
 
 		uncheckItem(itemName);
 		*/
-	});
+//	});
 
 	$('.delete-button').click(function() {
 		$(this).closest('tr').fadeOut(400, function() {
@@ -132,6 +159,10 @@ function getItemNameOfRow(check-box) {
 
 }
 */
+
+function toggleCheckBox() {
+
+}
 
 // take in name of item
 function addItem(item) {
