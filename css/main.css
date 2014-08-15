@@ -3,47 +3,20 @@
 }
 
 body {
-	/*background-color: #D8D8D8;*/
-
-
 	background-color: #E6E6E6;
-
-/*
-	background-image: url("../images/background3.jpg");
-	background-repeat: no-repeat;
-	*/
-	/*
-	-webkit-filter: blur(5px);
-	-moz-filter: blur(5px);
-	-o-filter: blur(5px);
-	-ms-filter: blur(5px);
-	filter: blur(5px);
-	*/
 }
 
 .main {
 	display: none;
-
 	color: #585858;
-
-
-	/*background-color: white;*/
-	/*max-width: 300px;*/
-	/*width: 100px;*/
 	margin-top: 75px;
-	/*text-align: center;*/
-	/*min-height: px;*/
-	/*max-width: 200px;*/
-	/*width: auto;*/
 	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
 
 #title {
 	text-align: center;
-	/*font-weight: bold;*/
 	font-weight: bold;
 	font-size: 48pt;
-	/*padding: 30px;*/
 	margin-bottom: 50px;
 	cursor: default;
 }
@@ -52,22 +25,15 @@ table {
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
 	border-radius: 10px;
-	/*width: 100px;*/
 	background-color: white;
 	margin-left: auto;
 	margin-right: auto;
-	/*width: 400px;*/
-	/*padding: 100;*/
-	/*font-family: "Trebuchet MS", Helvetica, sans-serif;*/
-	/*font-family: Tahoma, Geneva, sans-serif;*/
 	font-size: 16pt;
-	/*border: 10px solid white;*/
 }
 
 td {
 	padding: 6px;
 	vertical-align: middle;
-	/*height: 40px;*/
 }
 
 tr:first-child td {
@@ -76,7 +42,6 @@ tr:first-child td {
 }
 
 tr:first-child td:nth-child(3) {
-	/*vertical-align: middle;*/
 	padding-bottom: 17px;
 	padding-left: 6px;
 }
@@ -89,9 +54,6 @@ tr:first-child td:nth-child(2) {
 
 #enter-item-row:nth-child(1) {
 	height: 63px;
-	/*
-	padding: 1000px;
-	margin-top: 10000px;*/
 }
 
 #item-box {
@@ -99,13 +61,6 @@ tr:first-child td:nth-child(2) {
 	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 	font-size: 16pt;
 	color: #585858;
-
-
-	/*
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
-	*/
 }
 
 .store-button-no-items {
@@ -123,36 +78,20 @@ tr:first-child td:nth-child(2) {
 	vertical-align: bottom;
 }
 
-/*
-#store-button:hover {
-	opacity: 0.925;
-}*/
-
 .unchecked-box, .checked-box {
 	width: 20px;
 	height: 20px;
 	opacity: 0.725;
-	/*z-index: 3;*/
 }
 
 .unchecked-box:active, .checked-box:active {
 	opacity: 0.5;
-	/*opacity: 0.1;*/
-	/*background-color: red;*/
 }
 
 .box-active {
 	opacity: 0.5;
 	background-color: red;
 	color: purple;
-}
-
-img:active {
-	/*opacity: 0.5;*/
-}
-
-.unchecked-box:active {
-	/*background-color: red;*/
 }
 
 .item-name {
@@ -165,14 +104,6 @@ img:active {
 	opacity: 0.933;
 }
 
-/*#store-button:active, .unchecked-box:active, .checked-box:active, .item-name:active {*/
-	/*opacity: 0.75;*/
-	/*
-	height: 24px;
-	width: 24px;
-	*/
-/*}*/
-
 #store-button:active {
 	opacity: 0.7;
 }
@@ -183,15 +114,8 @@ td:nth-child(1), td:nth-child(3) {
 }
 
 td:nth-child(1) {
-	/*width: 36px;*/
 	text-align: right;
 	padding-top: 8px;
-
-
-}
-
-td:nth-child(1) img:active {
-	/*background-color: red;*/
 }
 
 .done td:nth-child(1) {
@@ -206,21 +130,11 @@ td:nth-child(1) img:active {
 
 td:nth-child(3) {
 	text-align: left;
-	/*width: 36px;*/
-}
-
-td:nth-child(3):active {
-	/*text-align: left;*/
-	/*width: 36px;*/
-	/*opacity: 0.9;*/
 }
 
 .done td:nth-child(3) {
 	opacity: 0.7;
-
 }
-
-
 
 .delete-button:hover {
 	opacity: 0.85;
@@ -234,88 +148,7 @@ td:nth-child(3):active {
 	opacity: 0.5;
 }
 
-.done td:nth-child(2):hover {
-	/*opacity: 0.63;*/
-}
-
-tr:last-child {
-}
-
 tr:last-child td {
 	height: 37px;
 	vertical-align: top;
 }
-
-/*
-body {
-	background-color: black;
-}
-
-.main {
-	background-color: white;
-	margin-top: 110px;
-	padding-left: 100px;
-	min-width: 1200px;
-	height: 500px;
-}
-
-.ryu {
-	float: left;
-}
-
-.ryu-ready, .ryu-still, .ryu-throwing, .ryu-cool {
-  	width: 659px;
- 	height: 494px;
-}
-
-.ryu-ready, .ryu-throwing, .ryu-cool {
-  	display: none;
-} 
-
-.ryu-ready {
- 	background-image: url('../images/ryu-ready-position.gif');
-}
-
-.ryu-still {
- 	background-image: url('../images/ryu-standing-still.png');
-}
-
-.ryu-throwing {
- 	background-image: url('../images/ryu-throwing-hadouken.png');
-}
-
-.ryu-cool {
-	background-image: url('../images/ryu-cool.gif');
-}
-
-.hadouken, .ryu-ready, .ryu-still, .ryu-throwing, .ryu-cool {
-	background-repeat: no-repeat;
-}
-
-.hadouken {
-	background-image: url('../images/hadouken.gif');
-	width: 156px; 
-	height: 90px;
-	display: none;
-	position: relative;
-	top: 170px;
-	left: -180px;
-	float: left;
-	z-index: 1;
-}
-
-.info {
-	font-family: sans-serif;
-	font-weight: bold;
-	list-style-type: none;
-	position: absolute;
-	top: 260px;
-	left: 800px;
-}
-
-.info ul {
-	padding: 15px;
-	font-size: 24px;
-}
-*/
-
