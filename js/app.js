@@ -25,9 +25,20 @@ $(document).ready(function() {
 		}
 	});
 
+
+	$('.unchecked-box').click(check);
+	$('.checked-box'  ).click(uncheck);
+
+
+
+
+
+/*
+
 	$('.unchecked-box, .checked-box').click(function () {
  
-  function uncheck (e) {
+  //function uncheck (e) {
+  	function uncheck () {
 		$('<img src="images/unchecked.png" alt="" class="unchecked-box">')
             .insertAfter($(this)) // [!!] The wrapping of `this` can be simplified (see next function)
             .on('click', check);  // [!!] Rebind
@@ -35,7 +46,8 @@ $(document).ready(function() {
 		$(this).remove();
   }
  
-  function check (e) {
+  //function check (e) {
+  	function check () {
 		$('<img src="images/checked.png" alt="" class="checked-box">')
             .insertAfter(this)
             .on('click', uncheck);  // [!!] Rebind
@@ -51,6 +63,8 @@ $(document).ready(function() {
 	$('.checked-box'  ).click(uncheck);
 	
 });
+*/
+
 /*
 	$('.unchecked-box').click(function() {
 		// get the item of this row
@@ -94,6 +108,8 @@ $(document).ready(function() {
 	$('.delete-button').click(function() {
 		$(this).closest('tr').fadeOut(400, function() {
 		});
+
+
 		$(this).closest('tr').remove();
 		//alert($('table tr').length + ' table rows left');
 
@@ -177,7 +193,17 @@ function addItem(item) {
 
 	//insert after
 	// add pics and everything
-	$('<tr><td><img src="images/unchecked.png" alt="" class="unchecked-box"></td><td class="item-name">' + item + '</td><td><img src="images/delete.png" alt="" class="delete-button"></td></tr>').insertAfter($('#enter-item-row'));
+	$('<tr><td><img src="images/unchecked.png" alt="" class="unchecked-box"></td><td class="item-name">' + item + '</td><td><img src="images/delete.png" alt="" class="delete-button"></td></tr>')
+	.insertAfter($('#enter-item-row'));
+	// get to the box and add event handler... in the tr, first td?
+	//.$('.unchecked-box').first().click(check);
+	//.click(check);
+
+	// bind click and remove event handlers to new items (the images)
+
+	$('.unchecked-box').click(check);
+	$('.delete-button').click(removeItem);
+
 
 }
 
@@ -186,6 +212,8 @@ function checkItem(item) {
 	// check item by removing unchecked box and replacing with checked box
 	// change classes to make ish grayed out
 	// reposition to top of done ish
+
+	//alert('');
 
 	var itemName = item.text();
 	$('<tr class="done"><td><img src="images/checked.png" alt="" class="checked-box"></td><td class="item-name">' + itemName + '</td><td><img src="images/delete.png" alt="" class="delete-button"></td></tr>').insertBefore($('.done').first());
@@ -214,5 +242,33 @@ function uncheckItem(item) {
 }
 
 function removeItem() {
+	// wuts this??????
+	$(this).closest('tr').remove();
+	//alert($('table tr').length + ' table rows left');
 
+	if ($('table tr').length < 2) {
+		//alert('1');
+		$('tr:first-child td:nth-child(2)').addClass('item-box-no-items');
+		//$('tr:first-child td:nth-child(3)').addClass('delete-button-no-items');
+		$('#store-button').addClass('store-button-no-items');
+	}
+}
+
+function uncheck () {
+	$('<img src="images/unchecked.png" alt="" class="unchecked-box">')
+        .insertAfter($(this)) // [!!] The wrapping of `this` can be simplified (see next function)
+        .on('click', check);  // [!!] Rebind
+	$(this).closest('tr').removeClass('done');
+	$(this).remove();
+}
+
+//function check (e) {
+	function check () {
+		//alert('');
+
+	$('<img src="images/checked.png" alt="" class="checked-box">')
+        .insertAfter(this)
+        .on('click', uncheck);  // [!!] Rebind
+	$(this).closest('tr').addClass('done');
+	$(this).remove();
 }
