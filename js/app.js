@@ -7,6 +7,7 @@ $(document).ready(function() {
 			$('tr:first-child td:nth-child(2)').removeClass('item-box-no-items');
 			$('#store-button').removeClass('store-button-no-items');
 			addItem($(this).val());
+  			event.preventDefault();
 		}
 	});
 
